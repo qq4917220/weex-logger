@@ -32,9 +32,11 @@ import logger from "../src/logger";
 ```ts
 
     logger.add("no start");
+
     logger.start(content => {
       this.log = content;
     });
+    
     logger.add("start1");
     logger.add("start2");
 
@@ -45,4 +47,4 @@ import logger from "../src/logger";
 
 ## Licences
 
-[MIT](LICENSE)
+[MIT]
