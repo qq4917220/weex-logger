@@ -49,6 +49,12 @@ import logger from "../src/logger";
 
 ```    
 
+## Other
+
+生成的JS文件在dist目录中，可使用JS调用，调用方式雷同，不再重复。
+
+The generated JS file can be called in the dist directory using the JS call, and the call is identical and no longer repeats.
+
 ## Licences
 
 [MIT]
