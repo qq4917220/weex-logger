@@ -19,10 +19,10 @@ export class Logger {
     private output: OutputFunc | undefined = undefined
 
     /** 
-     * info 输出日志信息
+     * add 输出日志信息
      * @param str 日志信息
      */
-    info(str: string) {
+    add(str: string) {
         console.log('info');
         console.log(str)
         if (this.output) {
@@ -42,10 +42,10 @@ export class Logger {
     }
 
     /**
-     * setOutput 设置输出函数
+     * start 设置输出函数
      * @param output 输出函数
      */
-    setOutput(output: OutputFunc) {
+    start(output: OutputFunc) {
         console.log(output);
         this.output = output
     }

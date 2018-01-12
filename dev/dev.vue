@@ -3,7 +3,7 @@
     <div>------------------------</div>
     <div>{{info}}</div>
     <div>1.yarn dev or npm run dev</div>
-    <div>2.Open the dev.html in the browser</div>
+    <div>2.open the dev.html in the browser</div>
     <div>have fun!!!</div>
     <div>------------------------</div>
     <div></div>
@@ -31,12 +31,12 @@ export default class Index extends Vue {
   log = "1111";
 
   created() {
-    logger.info("test1");
-    logger.setOutput(content => {
+    logger.add("no start");
+    logger.start(content => {
       this.log = content;
     });
-    logger.info("test2");
-    logger.info("test3");
+    logger.add("start1");
+    logger.add("start2");
   }
 }
 </script>

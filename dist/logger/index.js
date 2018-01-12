@@ -21,6 +21,8 @@ var Logger = /** @class */ (function () {
      * @param str 日志信息
      */
     Logger.prototype.info = function (str) {
+        console.log('info');
+        console.log(str);
         if (this.output) {
             if (this.content != '') {
                 str = "\r\n" + str;
@@ -44,6 +46,7 @@ var Logger = /** @class */ (function () {
      * @param output 输出函数
      */
     Logger.prototype.setOutput = function (output) {
+        console.log(output);
         this.output = output;
     };
     return Logger;
