@@ -1,33 +1,48 @@
-# nodejs-module-ys-weex
+weex-logger
+=================
 
-## 组件定义
+weex-logger是一个日志记录中间件,实现类似console.log的效果,方便在weex中显示交互数据。
 
-路径统一放置于 `src` 目录之下，有使用场景限制的组件，应放置在同一目录下，具体的组件应当拥有自已的一个目录
+导入访中间件,并调用start事件,定义好输出的变量，即可在当前页面及所有子页面中使用add事件增加信息，每行信息分开，方便查看。
 
-一般来说，vue文件的名称与组件目录名称一致，为了使用便捷，同时放置 `index.ts` 将组件默认导出
+Weex-logger is a logging middleware that implements a console.log - like effect and facilitates display of interactive data in weex.
 
-为了避免命名冲突，组件命名应当在具体作用名称前面再加上大写字母 `Y` ，比如一个 `Select` 组件，名字定义应该为 `YSelect`
+Import the access middleware, and invoke the start event, define the output variables, then you can use the add event to increase information in the current page and all sub pages. Each row information is separated and convenient to view.
 
-## 开发调试
+## Install
 
-开发调试的目录为 `dev`，先执行命令 `yarn start`，即可复杂控制台打印出来的 `dev.js` 文件URL，然后执行命令 `yarn dev`
+`npm install weex-logger --save`
 
-然后对 `dev.ts` 文件的修改，都可以在浏览器上刷新观察变化
+## Usage
 
-一般不要将 `dev` 目录下的文件变化提交到Git
+```ts
 
-## 声明文件
-
-引用 `ys-weex` 的项目，随便建一个 `d.ts` 文件，在里面写入
+import logger from "../src/logger";
 
 ```
-/// <reference types="ys-weex" />
-```
 
-即可实现 `.vue` 文件及 `weex` 框架的TS声明定义
+## Options
 
-## 更新发布
+- `start` 开始记录 start record
+- `add` 增加记录 added record
+- `content` 全部记录内容 all records
 
-修改 `package.json` 的 `version`
+## Example
 
-执行命令 `yarn prod` 后就可以提交了，因为本项目纯粹为组件库，所以本命令不需要执行
+```ts
+
+    logger.add("no start");
+    logger.start(content => {
+      this.log = content;
+    });
+    logger.add("start1");
+    logger.add("start2");
+
+    let content = logger.Content;
+    logger.add(JSON.stringify(content));
+
+```    
+
+## Licences
+
+[MIT](LICENSE)

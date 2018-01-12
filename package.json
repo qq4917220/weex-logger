@@ -17,9 +17,9 @@
     "url": "git+https://github.com/qq4917220/weex-logger.git"
   },
   "bugs": {
-    "url": "https://github.com/HKUST-VISLab/koa-session-ts/issues"
+    "url": "https://github.com/qq4917220/weex-logger/issues"
   },
-  "homepage": "https://github.com/HKUST-VISLab/koa-session-ts#readme",
+  "homepage": "https://github.com/qq4917220/weex-logger#readme",
   "keywords": [
     "ray",
     "weex",

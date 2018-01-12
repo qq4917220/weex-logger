@@ -37,6 +37,9 @@ export default class Index extends Vue {
     });
     logger.add("start1");
     logger.add("start2");
+
+    let content = logger.Content;
+    logger.add(JSON.stringify(content));
   }
 }
 </script>
