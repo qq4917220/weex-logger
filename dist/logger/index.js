@@ -17,10 +17,10 @@ var Logger = /** @class */ (function () {
         configurable: true
     });
     /**
-     * info 输出日志信息
+     * add 输出日志信息
      * @param str 日志信息
      */
-    Logger.prototype.info = function (str) {
+    Logger.prototype.add = function (str) {
         console.log('info');
         console.log(str);
         if (this.output) {
@@ -42,10 +42,10 @@ var Logger = /** @class */ (function () {
         configurable: true
     });
     /**
-     * setOutput 设置输出函数
+     * start 设置输出函数
      * @param output 输出函数
      */
-    Logger.prototype.setOutput = function (output) {
+    Logger.prototype.start = function (output) {
         console.log(output);
         this.output = output;
     };
