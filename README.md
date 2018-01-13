@@ -21,7 +21,7 @@ Thanks to Zaaksam's technology sharing!
 
 ```ts
 
-import logger from "../src/logger";
+import logger from "weex-logger";
 
 ```
 
