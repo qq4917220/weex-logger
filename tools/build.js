@@ -65,6 +65,9 @@ childProcess.exec("yarn tsc -p tsconfig.json -d --declarationDir types/dist", (e
             if (err) {
                 console.log(`dist/index.d.ts 文件写入失败：${err.message}`)
             }
-        })
-    }
+
+            childProcess.exec("yarn tsc -p tsconfig.json -d --declarationDir types/dist", (error, stdout, stderr) => {
+
+            })
+        }
 })

@@ -30,6 +30,7 @@ import logger from "../src/logger";
 - `start` 开始记录 start record
 - `add` 增加记录 added record
 - `content` 全部记录内容 all records
+- `stop` 停止记录 stop record
 
 ## Example
 
@@ -40,12 +41,21 @@ import logger from "../src/logger";
     logger.start(content => {
       this.log = content;
     });
-    
     logger.add("start1<br/>");
     logger.add("start2<br/>");
 
-    let content = logger.Content;
-    logger.add(content);
+    let content = logger.content;
+    logger.add("logger content:" + JSON.stringify(content));
+
+    logger.stop();
+    logger.add("stop1<br/>");
+    logger.add("stop2<br/>");
+
+    logger.start(content => {
+      this.log = content;
+    });
+    logger.add("restart1<br/>");
+    logger.add("restart2<br/>");
 
 ```    
 
@@ -55,8 +65,10 @@ import logger from "../src/logger";
 -----------run-------------
 start1
 start2
-start1
-start2
+logger content:"start1
+\r\nstart2
+" restart1
+restart2
 -----------END run-------------
 
 ```

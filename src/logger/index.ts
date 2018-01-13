@@ -1,5 +1,5 @@
 export interface OutputFunc {
-    (content: string): void
+    (outputContent: string): void
 }
 
 /**
@@ -15,7 +15,7 @@ export class Logger {
         return this.instance || (this.instance = new Logger())
     }
 
-    private content = ''
+    private outputContent = ''
     private output: OutputFunc | undefined = undefined
 
     /** 
@@ -26,19 +26,19 @@ export class Logger {
         console.log('info');
         console.log(str)
         if (this.output) {
-            if (this.content != '') {
+            if (this.outputContent != '') {
                 str = `\r\n${str}`
             }
-            this.content += str
-            this.output(this.content)
+            this.outputContent += str
+            this.output(this.outputContent)
         }
     }
 
     /**
      * 日志内容
      */
-    get Content() {
-        return this.content
+    get content() {
+        return this.outputContent
     }
 
     /**
@@ -46,8 +46,14 @@ export class Logger {
      * @param output 输出函数
      */
     start(output: OutputFunc) {
-        console.log(output);
         this.output = output
+    }
+
+    /**
+     * stop 停止输出
+     */
+    stop() {
+        this.output = undefined;
     }
 }
 

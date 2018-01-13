@@ -3,7 +3,7 @@
  */
 var Logger = /** @class */ (function () {
     function Logger() {
-        this.content = '';
+        this.outputContent = '';
         this.output = undefined;
     }
     Object.defineProperty(Logger, "Instance", {
@@ -24,19 +24,19 @@ var Logger = /** @class */ (function () {
         console.log('info');
         console.log(str);
         if (this.output) {
-            if (this.content != '') {
+            if (this.outputContent != '') {
                 str = "\r\n" + str;
             }
-            this.content += str;
-            this.output(this.content);
+            this.outputContent += str;
+            this.output(this.outputContent);
         }
     };
-    Object.defineProperty(Logger.prototype, "Content", {
+    Object.defineProperty(Logger.prototype, "content", {
         /**
          * 日志内容
          */
         get: function () {
-            return this.content;
+            return this.outputContent;
         },
         enumerable: true,
         configurable: true
@@ -46,8 +46,13 @@ var Logger = /** @class */ (function () {
      * @param output 输出函数
      */
     Logger.prototype.start = function (output) {
-        console.log(output);
         this.output = output;
+    };
+    /**
+     * stop 停止输出
+     */
+    Logger.prototype.stop = function () {
+        this.output = undefined;
     };
     return Logger;
 }());

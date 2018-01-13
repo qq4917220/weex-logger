@@ -36,12 +36,21 @@ export default class Index extends Vue {
     logger.start(content => {
       this.log = content;
     });
-    
     logger.add("start1<br/>");
     logger.add("start2<br/>");
 
-    let content = logger.Content;
-    logger.add(content);
+    let content = logger.content;
+    logger.add("logger content:" + JSON.stringify(content));
+
+    logger.stop();
+    logger.add("stop1<br/>");
+    logger.add("stop2<br/>");
+
+    logger.start(content => {
+      this.log = content;
+    });
+    logger.add("restart1<br/>");
+    logger.add("restart2<br/>");
   }
 }
 </script>
