@@ -32,9 +32,11 @@ export default class Index extends Vue {
 
   created() {
     logger.add("no start<br/>");
+
     logger.start(content => {
       this.log = content;
     });
+    
     logger.add("start1<br/>");
     logger.add("start2<br/>");
 

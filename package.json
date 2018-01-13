@@ -25,6 +25,8 @@
     "weex",
     "log",
     "logger",
+    "console",
+    "console-log",
     "ts",
     "typescript"
   ],
