@@ -11,7 +11,7 @@
     <div>-----------run-------------</div>
     <!--日志显示-->
     <div>
-      {{log}}
+      <span v-html="log"></span>
     </div>
     <div>-----------END run-------------</div>
   </div>
@@ -31,15 +31,15 @@ export default class Index extends Vue {
   log = "1111";
 
   created() {
-    logger.add("no start");
+    logger.add("no start<br/>");
     logger.start(content => {
       this.log = content;
     });
-    logger.add("start1");
-    logger.add("start2");
+    logger.add("start1<br/>");
+    logger.add("start2<br/>");
 
     let content = logger.Content;
-    logger.add(JSON.stringify(content));
+    logger.add(content);
   }
 }
 </script>

@@ -35,19 +35,33 @@ import logger from "../src/logger";
 
 ```ts
 
-    logger.add("no start");
+    logger.add("no start<br/>");
 
     logger.start(content => {
       this.log = content;
     });
-
-    logger.add("start1");
-    logger.add("start2");
+    
+    logger.add("start1<br/>");
+    logger.add("start2<br/>");
 
     let content = logger.Content;
-    logger.add(JSON.stringify(content));
+    logger.add(content);
 
 ```    
+
+## Result
+
+```
+-----------run-------------
+start1
+start2
+start1
+start2
+-----------END run-------------
+
+```
+
+
 
 ## Other
 
