@@ -1,4 +1,4 @@
-weex-logger
+Weex-logger is a logging middleware that implements a console.log - like effect and facilitates display of interactive data in weex.
 =================
 
 weex-logger是一个日志记录中间件,实现类似console.log的效果,方便在weex中显示交互数据。
