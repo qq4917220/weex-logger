@@ -21,13 +21,17 @@ export class Logger {
     /** 
      * add 输出日志信息
      * @param str 日志信息
+     * @param isJson 可选参数，默认为不输出json，设为true时则输出为json
      */
-    add(str: string) {
-        console.log('info');
-        console.log(str)
+    add(str: any, isJson?: boolean) {
+        if (isJson) {
+            str = JSON.stringify(str);
+        } else {
+            str = str + ''
+        }
         if (this.output) {
             if (this.outputContent != '') {
-                str = `\r\n${str}`
+                str = `<br/>\r\n${str}`
             }
             this.outputContent += str
             this.output(this.outputContent)

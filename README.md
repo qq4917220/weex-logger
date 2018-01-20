@@ -33,26 +33,26 @@ import logger from "weex-logger";
 
 ```ts
 
-    logger.add("no start<br/>");
+    logger.add("no start");
 
     logger.start(content => {
       this.log = content;
     });
-    logger.add("start1<br/>");
-    logger.add("start2<br/>");
+    logger.add("start1");
+    logger.add("start2");
 
     let content = logger.content;
     logger.add("logger content:" + JSON.stringify(content));
 
     logger.stop();
-    logger.add("stop1<br/>");
-    logger.add("stop2<br/>");
+    logger.add("stop1");
+    logger.add("stop2");
 
     logger.start(content => {
       this.log = content;
     });
-    logger.add("restart1<br/>");
-    logger.add("restart2<br/>");
+    logger.add("restart1");
+    logger.add("restart2");
 
 ```    
 
