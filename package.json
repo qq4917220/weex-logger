@@ -1,6 +1,6 @@
 {
   "name": "weex-logger",
-  "version": "1.1.25",
+  "version": "1.1.26",
   "main": "dist/index.js",
   "types": "types/dist/index.d.ts",
   "author": "qq4917220 <4917220@qq.com>",

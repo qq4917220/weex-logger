@@ -15,8 +15,9 @@ export declare class Logger {
     /**
      * add 输出日志信息
      * @param str 日志信息
+     * @param isJson 可选参数，默认为不输出json，设为true时则输出为json
      */
-    add(str: string): void;
+    add(str: any, isJson?: boolean): void;
     /**
      * 日志内容
      */
